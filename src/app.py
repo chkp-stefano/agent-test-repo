@@ -7,6 +7,7 @@ PORT = 8080
 
 
 class StatusHandler(BaseHTTPRequestHandler):
+    """Handles status requests."""
     def do_GET(self):
         body = json.dumps({"status": "ok", "version": VERSION}).encode()
         self.send_response(200)
